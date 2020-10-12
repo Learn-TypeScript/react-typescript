@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 
 export interface NewToDoProps {
-    todoAddHandler: Function
+    onAddTodo: (text: string) => void;
 }
 
 const NewToDo: React.SFC<NewToDoProps> = (props) => {
@@ -10,7 +10,8 @@ const NewToDo: React.SFC<NewToDoProps> = (props) => {
     const todoSubmitHandler = (event: React.FormEvent) => {
         event.preventDefault();
         const enteredText = textInputRef.current!.value;
-        props.todoAddHandler(enteredText)
+        console.log(enteredText);
+        props.onAddTodo(enteredText)
 
     }
     return (

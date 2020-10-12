@@ -2,19 +2,34 @@ import React, { useState } from 'react';
 import TodoList from './components/TodoList'
 import NewTodo from './components/NewTodo'
 
-const App: React.FC = () => {
-  const [newTodo, setNewTodo] = useState<string>('');
+type todoList = {
+  id: number, text: string
+}
 
-  const todos = [{ id: 't1', text: 'Finish the course' }]
+type TDArray = { id: number, text: string }
+
+const App: React.FC = () => {
+  const [todos, setTodos] = useState<TDArray[]>([] as TDArray[])
+  // const todos = [{ id: 't1', text: 'Finish the course' }]
 
   const todoAddHandler = (text: string) => {
-    setNewTodo(text)
     console.log(text);
+    const todo: todoList = { id: 0, text: '' }
+    const todoArray: TDArray[] = [{ id: 0, text: '' }]
+    todo.id = Math.random();
+    todo.text = text
+
+    if (todoArray.length === 0) {
+      todoArray.push(todo)
+      setTodos(todoArray.concat(todo))
+    } else {
+      setTodos(todos.concat(todo))
+    }
 
   }
   return (
     <div className="App">
-      <NewTodo todoAddHandler={todoAddHandler} />
+      <NewTodo onAddTodo={todoAddHandler} />
       <TodoList items={todos} />
     </div>
   );
