@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { tsPropertySignature } from '@babel/types';
 
 export interface TodoListProps {
     items: { id: string, text: string }[]
