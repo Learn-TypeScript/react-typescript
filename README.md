@@ -21,3 +21,11 @@ Created by Maximilian Schwarzmüller
 (177). **How Do React + TypeScript Work Together?**
 
 - In App.tsx, we have: `React.FC`. In `node_modules`, there is a `@types` file where all the translations take place. So `FC` stands for `FunctionComponent`. You can replace `FC` with `FunctionComponent`. An alternative would be `ClassComponent`.
+
+**These links might also be interesting**
+
+- Official React Docs: https://reactjs.org/docs/getting-started.html
+
+- More React Resources: https://academind.com/learn/react/
+
+- create-react-app + TypeScript Docs: https://create-react-app.dev/docs/adding-typescript/
